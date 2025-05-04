@@ -1,6 +1,6 @@
 import React from 'react';
 
-const productCart = ({eachProduct,addToCart}) => {
+const productCart = ({eachProduct,addToCart,isAdded }) => {
    const {image,name,detail,price} = eachProduct;
     return (
         <div className="card bg-[#1F1F2E] border-1 lg:w-96 border-[#38384A] shadow-sm">
@@ -14,7 +14,7 @@ const productCart = ({eachProduct,addToCart}) => {
                 <p className='text-[15px]'>{detail}</p>
                 <p className='text-[15px]'>$ {price}</p>
                 <div className="card-actions justify-end">
-                    <button onClick={()=>addToCart(eachProduct)} className="btn btn-primary">Add to Cart</button>
+                    <button  onClick={()=>addToCart(eachProduct)} className="btn btn-primary" disabled ={isAdded }>Add to Cart</button>
                 </div>
             </div>
         </div>

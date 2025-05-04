@@ -25,12 +25,13 @@ function App() {
    
   }, [allProduct])
 
-  
+
   function addToCart(item) {
     setCartLs(item.id)
     const cart = getStoredCart();
     const cartFinalItem =  updateCart(cart,allProduct);
     setCartItems(cartFinalItem);
+    
 
   }
 
@@ -40,7 +41,7 @@ function App() {
       <NavBar cartItems={cartItems}></NavBar>
       <HeroSection></HeroSection>
       <h1 className='text-center lg:text-4xl md:text-3xl text-2xl font-bold mt-10'>New Arrivals</h1>
-      <Productarchive getAllProduct={getAllProduct} addToCart={addToCart}></Productarchive>
+      <Productarchive cartItems ={cartItems} getAllProduct={getAllProduct} addToCart={addToCart}></Productarchive>
     </>
   )
 }

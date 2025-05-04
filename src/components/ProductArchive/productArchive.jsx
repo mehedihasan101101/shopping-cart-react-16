@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import ProductCart from "../productCard/productCart";
+import ProductCard from "../productCard/productCard";
 
 
-const Productarchive = ({ addToCart, getAllProduct }) => {
+const Productarchive = ({ addToCart, getAllProduct,cartItems}) => {
 
 
-    const [keyBoards, setKeyBoards] = useState([])
+    const [keyBoards, setKeyBoards] = useState([]);
+
 
     useEffect(() => {
         fetch('/shopping-cart-react-16/products.json')
@@ -18,7 +19,13 @@ const Productarchive = ({ addToCart, getAllProduct }) => {
 
     return (
         <div className="container m-auto  grid lg:grid-cols-3 md:grid-cols-2 mt-10 gap-10 p-5">
-            {keyBoards.map(keyboard => (<ProductCart addToCart={addToCart} key={keyboard.id} eachProduct={keyboard}></ProductCart>))}
+            {keyBoards.map(keyboard => {
+               const isAdded = cartItems.some(x=> keyboard.id == x.id) 
+    
+                return(
+                    <ProductCard isAdded={isAdded} addToCart={addToCart} key={keyboard.id} eachProduct={keyboard}></ProductCard>
+                )
+            })}
         </div>
     );
 };

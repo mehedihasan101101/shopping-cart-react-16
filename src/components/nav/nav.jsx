@@ -17,11 +17,22 @@ export default function NavBar({ cartItems }) {
                             </div>
                             <div
                                 tabIndex={0}
-                                className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
+                                className="card card-compact dropdown-content bg-[#16274e] z-1 mt-3 w-[400px] shadow">
                                 <div className="card-body">
                                     {cartItems.map(each => {
                                         return (<>
-                                            <span className="text-lg font-bold"> {each.name} </span>
+                                            <div className="flex items-center gap-5">
+                                                <img className="w-[70px]" src={each.image} alt="" />
+                                                <span className=""> {each.name} </span>
+                                                <label className="input w-fit p" >
+                                                    Qty:
+                                                    <input  type="number" className="w-[35px]" />
+
+                                                </label>
+                                                <span className=""> = </span>
+                                                <span className="">${each.price}</span>
+                                            </div>
+
 
                                         </>)
                                     })}
