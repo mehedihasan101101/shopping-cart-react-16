@@ -1,3 +1,6 @@
+
+import CartItem from "../cartItem/cartItem";
+
 export default function NavBar({ cartItems }) {
 
     return (
@@ -19,27 +22,8 @@ export default function NavBar({ cartItems }) {
                                 tabIndex={0}
                                 className="card card-compact dropdown-content bg-[#16274e] z-1 mt-3 w-[400px] shadow">
                                 <div className="card-body">
-                                    {cartItems.map(each => {
-                                        return (<>
-                                            <div className="flex items-center gap-5">
-                                                <img className="w-[70px]" src={each.image} alt="" />
-                                                <span className=""> {each.name} </span>
-                                                <label className="input w-fit p" >
-                                                    Qty:
-                                                    <input  type="number" className="w-[35px]" />
+                                    {cartItems.map(cartItem => <CartItem cartItem ={cartItem} ></CartItem>)}
 
-                                                </label>
-                                                <span className=""> = </span>
-                                                <span className="">${each.price}</span>
-                                            </div>
-
-
-                                        </>)
-                                    })}
-                                    {/* <span className="text-info">Subtotal: $999</span>
-                                    <div className="card-actions">
-                                        <button className="btn btn-primary btn-block">View cart</button>
-                                    </div> */}
                                 </div>
                             </div>
                         </div>
