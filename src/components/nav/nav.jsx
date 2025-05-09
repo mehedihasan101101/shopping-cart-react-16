@@ -1,7 +1,9 @@
 
+
 import CartItem from "../cartItem/cartItem";
 
 export default function NavBar({ cartItems }) {
+
 
     return (
         <>
@@ -22,9 +24,12 @@ export default function NavBar({ cartItems }) {
                                 tabIndex={0}
                                 className="card card-compact dropdown-content bg-[#16274e] z-1 mt-3 w-[400px] shadow">
                                 <div className="card-body">
-                                    {cartItems.map(cartItem => <CartItem cartItem ={cartItem} ></CartItem>)}
+                                    {cartItems.map(cartItem => <CartItem cartItem={cartItem} ></CartItem>)}
+
+                                    <button className="bg-[#0F172A] p-3 mt-5">Checkout</button>
 
                                 </div>
+
                             </div>
                         </div>
                         <div className="dropdown dropdown-end">

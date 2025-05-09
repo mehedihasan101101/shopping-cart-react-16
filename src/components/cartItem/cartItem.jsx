@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-export default function CartItem({ cartItem }) {
+
+export default function CartItem({cartItem}) {
     const [quantity, setQuantity] = useState(1);
     function cartOperation(event) {
 
@@ -8,13 +9,14 @@ export default function CartItem({ cartItem }) {
         setQuantity(value);
 
     }
-
+  
     function priceCal() {
         const basePrice = cartItem.price;
         const price = quantity * basePrice;
-         return price.toFixed(2);
+        return price.toFixed(2);
+
     }
- 
+
     return (
         <>
             <div className="flex items-center gap-5">
@@ -29,6 +31,8 @@ export default function CartItem({ cartItem }) {
                 <span className="">{priceCal()}</span>
             </div>
 
+
         </>
     )
 }
+

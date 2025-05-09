@@ -1,12 +1,30 @@
-# React + Vite
+# Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple **React** project designed to practice working with **local storage** and React state management. The application allows users to add products to a shopping cart, with the cart data being stored and retrieved from the browser's local storage.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **Features**
 
-## Expanding the ESLint configuration
+- **Product Listing**: Displays a list of products dynamically.
+- **Add to Cart**: Users can add items to the shopping cart.
+- **Persistent Cart**: Cart data is saved in local storage and reloaded on page refresh.
+- **React State Management**: Uses `useState` and `useEffect` hooks for managing state and side effects.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## **Technologies Used**
+
+- **React**: For building the user interface.
+- **Local Storage**: For persisting cart data.
+- **Tailwind Css**: For styling the application.
+
+---
+
+## **How It Works**
+
+1. **Add to Cart**: When a user clicks "Add to Cart," the product ID is saved to local storage using the `setCartLs` utility function.
+2. **Retrieve Cart**: On page load, the cart data is retrieved from local storage using the `getStoredCart` function.
+3. **Update Cart**: The `updateCart` function ensures the cart items are synced with the product list.
+
+---
